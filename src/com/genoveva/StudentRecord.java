@@ -54,6 +54,7 @@ public class StudentRecord
 			break;
 		case 'R':
 		case 'r': 
+			removeStudent();
 			break;
 		case 'E':
 		case 'e': 
@@ -109,6 +110,33 @@ public class StudentRecord
 	
 	public static void removeStudent()
 	{
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter the numbre of the student you want to remove");
+		String selection = in.nextLine(); 
+		int num;
+		try
+		{
+			num = Integer.parseInt(selection); 
+		}
+		catch(Exception e)
+		{
+			System.out.println("Bad Input!");
+			return;
+		}
+		
+		if( num < 0 || num >= size)
+		{
+			System.out.println("The value you entered is no valid");
+			return;
+		}
+		
+		for(int i = num; i < size - 1; ++i)
+		{
+			names[i] = names[i + 1];
+			grades[i] = grades[i +1];
+		}
+		
+		--size; 
 		
 	}
 }
