@@ -46,6 +46,7 @@ public class StudentRecord
 			break;
 		case 'A':
 		case 'a': 
+			addNewStudent();
 			break;	
 		case 'S':
 		case 's': 
@@ -84,6 +85,30 @@ public class StudentRecord
 		{
 			System.out.println("Empty Slot");
 		}
+		
+	}
+	
+	public static void addNewStudent()
+	{
+		if(size >= MAX)
+		{
+			System.out.println("No space left");
+			return;
+		}
+		
+		Scanner in = new Scanner(System.in);
+		System.out.println("Please enter the student's first name.");
+		String firstName = in.nextLine();
+		System.out.println("Please enter the grade");
+		char grade = in.nextLine().charAt(0);
+		
+		names[size] = firstName; 
+		grades[size] = Character.toUpperCase(grade);
+		++size; 
+	}
+	
+	public static void removeStudent()
+	{
 		
 	}
 }
