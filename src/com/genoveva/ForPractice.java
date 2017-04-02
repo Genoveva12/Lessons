@@ -78,11 +78,13 @@ public class ForPractice
 //		System.out.println("The lowest number is " + min);
 		
 		Scanner in = new Scanner(System.in);
+		
+		System.out.println("Please enter a number");
 		int input = in.nextInt();
 		
 		int sum = 0;
 		
-		while(input != 0);
+		while(input != 0)
 		{
 			sum = input + sum;
 			System.out.println("Please enter a number");
